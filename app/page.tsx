@@ -3,11 +3,11 @@
 import { useEffect, useRef } from "react";
 
 export default function Frame8() {
-  const glowRef = useRef(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   // Mouse tracking effect
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
       if (glowRef.current) {
         // Calculate the exact center by subtracting half the width/height (200px)
         const x = e.clientX - 200;
@@ -23,7 +23,7 @@ export default function Frame8() {
   }, []);
 
   // Function to handle smooth scrolling
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -170,24 +170,24 @@ export default function Frame8() {
 
           <div className="flex flex-wrap justify-center gap-6 mt-16 w-full">
             {[
-              { 
-                color: 'bg-[#FDDE84]', 
-                text: 'view scholarship database', 
-                link: 'https://docs.google.com/spreadsheets/d/1V8wLDsztL04rJYdZX3Pf3yPMd1zNxEAU29zWnUNn1ZI/edit?usp=sharing' 
+              {
+                color: 'bg-[#FDDE84]',
+                text: 'view scholarship database',
+                link: 'https://docs.google.com/spreadsheets/d/1V8wLDsztL04rJYdZX3Pf3yPMd1zNxEAU29zWnUNn1ZI/edit?usp=sharing'
               },
-              { 
-                color: 'bg-[#F27A5E]', 
-                text: 'view essay repository', 
-                link: 'https://drive.google.com/drive/folders/1f3NNq-U3huwKOje4mLXJhpemNsL60OQD?usp=sharing' 
+              {
+                color: 'bg-[#F27A5E]',
+                text: 'view essay repository',
+                link: 'https://drive.google.com/drive/folders/1f3NNq-U3huwKOje4mLXJhpemNsL60OQD?usp=sharing'
               },
-              { 
-                color: 'bg-[#FDDE84]', 
-                text: 'view workshop notes', 
-                link: 'https://drive.google.com/drive/folders/1Poyivuszni6mTHFNBTWuaUrzalT19ovA?usp=sharing' 
+              {
+                color: 'bg-[#FDDE84]',
+                text: 'view workshop notes',
+                link: 'https://drive.google.com/drive/folders/1Poyivuszni6mTHFNBTWuaUrzalT19ovA?usp=sharing'
               }
             ].map((btn, i) => (
-              <a 
-                key={i} 
+              <a
+                key={i}
                 href={btn.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -288,7 +288,7 @@ export default function Frame8() {
         <p className="text-black font-kadwa text-lg md:text-xl">
           contact: <a href="mailto:pecsatvcu@gmail.com" className="text-[#F27A5E] hover:underline font-bold transition-all">pecsatvcu@gmail.com</a>
         </p>
-        <p className="text-black font-kadwa text-lg md:text-xl"> 
+        <p className="text-black font-kadwa text-lg md:text-xl">
           instagram: <a href="https://instagram.com/pecsatvcu" target="_blank" rel="noopener noreferrer" className="text-[#F27A5E] hover:underline font-bold transition-all">@pecsatvcu</a>
         </p>
       </footer>
